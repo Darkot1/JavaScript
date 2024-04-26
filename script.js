@@ -1,3 +1,4 @@
+
 /*INICIO DE COMANDO PARA IMPRIMIR POR CONSOLA */
 
 /* console.log("Hola grupo!");
@@ -242,7 +243,7 @@ while(counter <= limit){
 
 //CICLO DO WHILE
 
-let userinput;
+/* let userinput;
 let isValid;
 
 do{
@@ -251,7 +252,7 @@ do{
     
 }while (!isValid);
 
-console.log(`!Has ingresado un numero valido: ${userinput}`)
+console.log(`!Has ingresado un numero valido: ${userinput}`) */
 
 
 /*CLASE 24 DE ABRIL*/
@@ -275,9 +276,9 @@ numbers.forEach(number =>{
 
 let cuadrados1 = [];
 numbers.forEach(number =>{
-    cuadrados.push(number*number)
+    cuadrados1.push(number*number)
 })
-console.log(cuadrados);
+console.log(cuadrados1);
 
 //METODO MAP
 
@@ -285,4 +286,66 @@ let cuadrados = numbers
     .filter(number => number %2 == 0)
     .map(number => number*number)
     .reduce((acumulador, valorActual) => acumulador + valorActual, 0);
-console.log(cuadrados);
+console.log(cuadrados); 
+
+//METODO .MAP
+cuadrados = numbers.map(number => number * number);
+console.log(cuadrados)
+
+
+
+//OBJETOS  CLASE 25 DE ABRIL
+
+/* const cabecera = document.getElementById("cabecera");
+console.log(cabecera);
+const boton = document.getElementById("boton");
+console.log(boton);
+ */
+let persona = {
+    nombre: 'Juan',
+    edad: 30,
+    ocupacion: 'programador',
+    saludar:function() {
+        return `Hola, soy ${this.nombre} y tengo ${this.edad} años.`;
+    },
+    toString: function(){
+        return `${this.nombre}, ${this.edad} años ${this.ocupacion}`;
+    }
+}
+
+let propiedad = 'mascota';
+console.log(persona.nombre);
+console.log(persona[propiedad]);
+console.log(persona.saludar());
+persona.saludar();  
+
+persona.calificacion ="alta";
+
+persona[propiedad] = "gato"
+
+console.log(persona);
+
+Object.defineProperty(persona, "clan",{
+    value: 'bezos',
+    writable: true,
+    enumerable: true,
+    configurable: true,
+});
+
+console.log(Object.keys(persona));   
+
+persona.clan ="Ma";
+console.log(persona);
+
+Object.assign(persona, { ciudad: 'Medellin', Pais: 'Colombia' });
+console.log(persona)
+
+console.log(persona.toString());
+
+const number100 = 100;
+const boleano = true;
+const regexp = /.+/;
+
+console.log(number100.toString());
+console.log(boleano.toString());
+console.log(regexp.toString());

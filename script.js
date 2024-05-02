@@ -353,21 +353,21 @@ console.log(regexp.toString()); */
 
 //CLASE 30 ABRIL JSON 
 
-let persona = {
+/* let persona = {
     nombre: 'Juan',
     edad: 25,
     ocupacion: 'Programador',
     hobbies: ['Jugar', 'Nadar', 'Correr'],
-   /*  saludar: function () {
+    saludar: function () {
         console.log(`Hola, soy ${this.nombre} y tengo ${this.edad} años`);
     },
     toString: function () {
         return `persona: nombre:${this.nombre}, "edad:" ${this.edad},
         "ocupacion:" + ${this.ocupacion}`;
-    } */
-}
+    }
+} */
 
-const json = `{
+/* const json = `{
     "nombre":"Juan",
     "edad":25,
     "ocupacion":"Programador",
@@ -377,26 +377,26 @@ const json = `{
         "ciudad":"ciudad ejemplo",
         "codigoPostal":"123456"
     }
-}`
+}` */
 
 
-console.log(json);
+/* console.log(json);
 let user = JSON.parse(json);
 console.log(user);
-console.log(user.nombre)
+console.log(user.nombre) */
 
 
 /* console.log(JSON.stringify(persona))
 console.log(JSON.stringify(persona,["nombre"]))
 console.log(JSON.stringify(persona,["nombre","ocupacion"])) */
 
-let {hobbies, edad, nombre, ocupacion} = persona;
+/* let {hobbies, edad, nombre, ocupacion} = persona; */
 
 /* console.log(persona.ocupacion);
 console.log(ocupacion);
  */
 
-ocupacion = "jugador"
+/* ocupacion = "jugador" */
 
 /* console.log(persona.ocupacion);
 console.log(ocupacion); */
@@ -409,7 +409,7 @@ console.log(ocupacion); */
 
 } */
 
-const fullUSer = {
+/* const fullUSer = {
     ...structuredClone(persona),
     power:25,
     life: 58,
@@ -482,3 +482,122 @@ for(let i in values){
 const newUser = Object.fromEntries(entries);
 console.log(entries);
 console.log(newUser);
+ */
+
+
+//CLASE ARRAYS 02 MAYO 
+
+/* let letters = new Array("a", "b", "c");
+console.log(letters);
+letters = new Array(3);
+const array = [];
+console.log(letters);
+
+
+const numbers = [1,2,3,4,5];
+console.log(numbers[1]);
+console.log(numbers.at(1));
+
+
+const props = ["a",1,true];
+console.log(props)
+console.log(props.length);
+props.forEach(prop => {
+    console.log(prop); 
+});
+
+
+props.push("b","c","d"); //agrega elementos al final de la lista 
+props.unshift(5, 6, 4);  //Agrega elementos al inicio de la lista
+console.log(props);
+
+props.pop();    //Elimina el ultimo elemento de la lista
+console.log(props); 
+props.shift();  //ELimina el primer elemento de la lista 
+console.log(props)
+
+
+let letter = undefined;
+let letter2 = undefined
+let texto = "abc hola";
+letter = Array.from(texto);
+console.log(letter);
+letter2 = [...texto];
+console.log(letter2)
+let otroletter = texto.split("");
+console.log(otroletter); */
+
+
+let textnumers = "123456";
+/* const number =Array.from(textnumers,(numero) => Number(numero));
+console.log(number) */
+
+/* const number =Array.from(textnumers, Number);
+console.log(number) */
+
+
+/* const numeros = [...textnumers].map((numero)=>Number(numero));
+console.log(numeros) */
+
+
+/* const numeros = [...textnumers].map(Number);
+console.log(numeros)
+
+const arrayNumbers = textnumers.split("");
+console.log(arrayNumbers)
+const newText =arrayNumbers.join("");
+console.log(newText) */
+
+/* numeros.push(7,8,9);
+console.log(numeros);
+numeros.push([10,11,12]);
+console.log(numeros[9][0]); */
+
+/* const seconPart = [6,7,8];
+const thirdPart = [9,10,11];
+const newArray = numeros.concat(seconPart,thirdPart);
+console.log(numeros);
+console.log(newArray);
+
+console.log(newArray.indexOf(5));
+console.log(newArray.lastIndexOf(8));
+console.log(newArray.includes(5)) */
+
+const names = [
+    {name: "Maria", age:20},
+    {name: "Bernardo", age:21},
+    {name: "Pancracio", age:22},
+    {name: "Andrea", age:23},
+    {name: "Sara", age:24},
+    {name: "Jorge", age:25},
+    {name: "Yurani", age:26},
+    {name: "Ayoze", age:27},
+];
+/* 
+const findElement = (array, searchedAge)=>{
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        if (element.age ===searchedAge) return element;
+    } return null;
+}       
+ */
+
+/* const findElement = (array, searchedAge)=>{
+    let result = null
+    array.forEach(element => {
+        if(element.age ===searchedAge)
+        result = element;
+        
+    });
+    return result;
+} */
+
+
+const findElement = (array, searchedAge)=>{
+    for (const element of array){
+        if (element.age ===searchedAge) return element;
+    } return null
+
+
+};
+console.log(findElement(names, 26));

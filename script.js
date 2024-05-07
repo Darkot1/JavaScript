@@ -601,3 +601,60 @@ const findElement = (array, searchedAge)=>{
 
 };
 console.log(findElement(names, 26));
+
+
+//CLASE MAYO 06 
+
+//ARRAY METODOS
+
+const element = ["A", "B", "C", "D","E","F"];
+element.reverse();
+console.log(element)
+
+
+const names1 = ["Alberto", "Zoe", "ana", "Mauricio","Bernardo"];
+console.log(names1);
+console.log(names1.sort());
+
+const sortednames = names1.toSorted();
+console.log(sortednames);
+
+
+let prueba = "hola";
+const toCapitalCase = word => {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+}
+console.log(toCapitalCase(prueba));
+
+
+/* let numerosPositivos  =[1,2,3,4,5];
+let numString;
+let num;
+let todosPositivos = numerosPositivos
+    .every(number => number > 0);
+
+console.log(todosPositivos); */
+ 
+
+/* let numerosNegativos  =[-1,-2,-3,-4,5];
+let numString;
+let num;
+let todosPositivos = numerosNegativos
+    .some(number => number > 0);
+
+console.log(todosPositivos); */
+
+
+const array1 = [0,1,2, [3,[4,8]]];
+console.log(array1);
+console.log(array1.flat())
+console.log(array1.flat(2));
+
+
+const numeros = [1,2,3,4,5];
+let resultado = numeros.flatMap(numero =>{
+    return [numero, numero*2];
+});
+console.log(resultado);
+
+let usuarios = []

@@ -804,9 +804,9 @@ console.log(body);
 tag[0].append(p)
 
 console.log(div)
-
+/* 
 const estado = p.isConnected;
-console.log(estado)
+console.log(estado) */
 
 
 
@@ -821,3 +821,100 @@ for (let i = 0; i < 10; i++) {
 }
 
 document.body.appendChild(fragment);
+
+
+
+const boton1 = document.createElement("button");
+boton1.innerText = "Nuevo DIV";
+boton1.id = "contenedor1";
+boton1.classList.add("btn","btn-primary");
+
+console.log(boton1.hasAttributes())
+console.log(boton1.hasAttribute("src"));
+console.log(boton1.getAttributeNames());
+console.log(boton1.getAttribute("id"));
+boton1.setAttribute("type","button");
+boton1.setAttribute("id", "butonName")
+console.log(boton1.getAttribute("type"))
+console.log(boton1.getAttribute("id"))
+
+console.log(boton1)
+
+//boton1.classList = "btn btn-primary";
+console.log(boton1.classList.length)
+console.log(boton1.classList.item(1))
+boton1.classList.toggle("btn-success") //Agrega una clase si no existe o elimina la clase si esa existe
+console.log(boton1.innerText);
+console.log(boton1.outerText);
+console.log(boton1.innerHTML);
+console.log(boton1.outerHTML);
+console.log(boton1.textContent)
+console.log(boton1.nodeName);
+
+/* document.body.appendChild(boton1);
+
+
+
+const tbody = document.getElementsByTagName("tbody")[0];
+const tr = document.createElement("tr");
+tbody.appendChild(tr);
+const td = document.createElement("td");
+td.innerText = "Sebastian";
+const td1 = document.createElement("td");
+td1.innerText = "Serna"
+const td2 = document.createElement("td");
+td2.innerText = "Bezos"
+tr.appendChild(td); 
+tr.appendChild(td1);
+tr.appendChild(td2); */
+
+const personas = [
+    {
+    nombre:"Sebastian",
+    apellido:"Serna",
+    clan:"Bezos",
+    edad:24,
+},
+    {   
+    nombre:"Juan",
+    apellido:"Caridad",
+    clan:"Bezos",
+    edad:29,
+},
+    {
+    nombre:"Santiago",
+    apellido:"mendoza",
+    clan:"Bezos",
+    edad:22,
+},
+    {
+    nombre:"Jorge",
+    apellido:"Monte",
+    clan:"Bezos",
+    edad:21,
+},
+]
+
+const tbody = document.querySelector("tbody");
+
+personas.forEach(persona => {
+    const tr = document.createElement("tr");
+
+    const td1 = document.createElement("td");
+    td1.innerText = persona.nombre;
+    tr.appendChild(td1);
+
+    const td2 = document.createElement("td");
+    td2.innerText = persona.apellido;
+    tr.appendChild(td2);
+
+    const td3 = document.createElement("td");
+    td3.innerText = persona.clan;
+    tr.appendChild(td3);
+
+    const td4 = document.createElement("td");
+    td4.innerText = persona.edad;
+    tr.appendChild(td4);
+
+    tbody.appendChild(tr);
+});

@@ -26,3 +26,10 @@ h1{
 p{
     font-size: large;
 }
+
+
+.divsLocos{
+    background-color: blueviolet;
+    padding: 20px;
+    margin: 2px;
+}

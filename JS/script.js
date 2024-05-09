@@ -769,12 +769,55 @@ divs[0].firstChild.nodeValue = "Nuevo texto"
 
 
 boton.addEventListener("click", () => {
-    parrafo1.classList.remove("elementoPrincipal");
-    parrafo1.classList.add("elementoSecundario");
-    parrafo2.classList.remove("elementoSecundario");
-    parrafo2.classList.add("elementoPrincipal");    
+    parrafo1.classList.toggle("elementoPrincipal");
+    parrafo1.classList.toggle("elementoSecundario");
+    parrafo2.classList.toggle("elementoSecundario");
+    parrafo2.classList.toggle("elementoPrincipal");
+
 })
 
 
 
 
+//CLASE MAYO 08 DOM
+
+const elements = document.getElementsByClassName("saludo");
+console.log(elements);
+
+const container = document.getElementsByName("container");
+console.log(container);
+
+const tag = document.getElementsByTagName("div");
+console.log(tag);
+
+
+//CREAR ELEMENTOS DESDE JAVASCRIPT
+
+const p = document.createElement("p");
+p.innerText = "Parrafo dentro del nuevo div";
+let div = document.createElement("div");
+div.appendChild(p);
+
+let body = document.getElementsByTagName("body");
+console.log(body);
+//body[0].appendChild(div);
+tag[0].append(p)
+
+console.log(div)
+
+const estado = p.isConnected;
+console.log(estado)
+
+
+
+const fragment = document.createDocumentFragment();
+
+for (let i = 0; i < 10; i++) {
+    const div = document.createElement("div");
+    div.classList.add("divsLocos");
+    div.textContent = `item Numero ${i +1}`;
+    fragment.appendChild(div);
+    
+}
+
+document.body.appendChild(fragment);

@@ -868,34 +868,45 @@ tr.appendChild(td);
 tr.appendChild(td1);
 tr.appendChild(td2); */
 
+
+
+
+
+
+
 const personas = [
     {
     nombre:"Sebastian",
     apellido:"Serna",
     clan:"Bezos",
     edad:24,
+    id:1,
 },
     {   
     nombre:"Juan",
     apellido:"Caridad",
     clan:"Bezos",
     edad:29,
+    id:2,
 },
     {
     nombre:"Santiago",
     apellido:"mendoza",
     clan:"Bezos",
     edad:22,
+    id:3,
 },
     {
     nombre:"Jorge",
     apellido:"Monte",
     clan:"Bezos",
     edad:21,
-},
-]
+    id:4,
 
-const tbody = document.querySelector("tbody");
+},
+];
+
+/* const tbody = document.querySelector("tbody");
 
 personas.forEach(persona => {
     const tr = document.createElement("tr");
@@ -917,4 +928,24 @@ personas.forEach(persona => {
     tr.appendChild(td4);
 
     tbody.appendChild(tr);
-});
+}); */
+
+
+const populateTableBody = (data) => {
+    const tbody =  document.getElementById("tbody");
+    tbody.innerHTML= '';
+
+    data.forEach(item => {
+        const row = document.createElement("tr");
+
+        Object.values(item).forEach(value =>{
+            const cell = document.createElement("td");
+            cell.textContent = value;
+            row.appendChild(cell);
+        });
+
+        tbody.appendChild(row);
+    });
+};
+
+populateTableBody(personas);

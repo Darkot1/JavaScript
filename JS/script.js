@@ -872,7 +872,7 @@ tr.appendChild(td2); */
 
 
 
-
+/* 
 
 const personas = [
     {
@@ -904,7 +904,7 @@ const personas = [
     id:4,
 
 },
-];
+]; */
 
 /* const tbody = document.querySelector("tbody");
 
@@ -931,7 +931,7 @@ personas.forEach(persona => {
 }); */
 
 
-const populateTableBody = (data) => {
+/* const populateTableBody = (data) => {
     const tbody =  document.getElementById("tbody");
     tbody.innerHTML= '';
 
@@ -948,4 +948,32 @@ const populateTableBody = (data) => {
     });
 };
 
-populateTableBody(personas);
+populateTableBody(personas); */
+
+
+const URLbase = "http://localhost:3000";
+
+
+
+async function renderUsers() {
+    const personas = await getusuarios();
+    const populateTableBody = (data) => {
+        const tbody = document.getElementById("tbody");
+        tbody.innerHTML = "";
+
+        data.forEach(item =>{
+            const row = document.createElement("tr");
+
+            Object.values(item).forEach(value =>{
+                const cell = document.createElement("td");
+                cell.textContent = value;
+                row.appendChild(cell);
+            });
+            tbody.appendChild(row)
+        });
+    }
+    
+    populateTableBody(personas);
+}
+
+await.renderUsers();

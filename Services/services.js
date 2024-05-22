@@ -22,3 +22,20 @@ export async function agregarUsuario(user) {
       body: JSON.stringify(user) 
     });
 }
+
+export async function updateUSer(id,user) {
+  await fetch(`${URLbase}/users/${id}`,{
+    method: "PUT",
+    headers: {
+      "content-type": "aplication/json"
+    },
+    body: JSON.stringify(user)
+  })
+}
+
+
+export async function deleteUser(id){
+  await fetch(`${URLbase}/users/${id}`,{
+    method: "DELETE"
+  })
+}

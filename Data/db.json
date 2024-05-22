@@ -1,13 +1,89 @@
 {
-    "usuarios": [
-        {"nombre":"Sebastian","apellido":"Serna","clan":"Bezos","edad":24,"id":1},
-        {"nombre":"Juan","apellido":"Caridad", "clan":"Bezos","edad":29,"id":2},
-        {"nombre":"Santiago","apellido":"mendoza","clan":"Bezos","edad":22,"id":3},
-        {"nombre":"Jorge","apellido":"Monte","clan":"Bezos","edad":21,"id":4},
-        {"nombre":"James","apellido":"Torres","clan":"Bezos","edad":28,"id":5},
-        {"nombre":"pedro","apellido":"Torres","clan":"Bezos","edad":28,"id":6},
-        {"nombre":"karen","apellido":"Torres","clan":"Bezos","edad":28,"id":7},
-        {"nombre":"raul","apellido":"Torres","clan":"Bezos","edad":28,"id":8}
-    ]
-    
+  "usuarios": [
+    {
+      "nombre": "Sebastian",
+      "apellido": "Serna",
+      "clan": "Bezos",
+      "edad": 24,
+      "id": "1"
+    },
+    {
+      "nombre": "Juan",
+      "apellido": "Caridad",
+      "clan": "Bezos",
+      "edad": 29,
+      "id": "2"
+    },
+    {
+      "nombre": "Santiago",
+      "apellido": "mendoza",
+      "clan": "Bezos",
+      "edad": 22,
+      "id": "3"
+    },
+    {
+      "nombre": "Jorge",
+      "apellido": "Monte",
+      "clan": "Bezos",
+      "edad": 21,
+      "id": "4"
+    },
+    {
+      "nombre": "James",
+      "apellido": "Torres",
+      "clan": "Bezos",
+      "edad": 28,
+      "id": "5"
+    },
+    {
+      "nombre": "pedro",
+      "apellido": "Torres",
+      "clan": "Bezos",
+      "edad": 28,
+      "id": "6"
+    },
+    {
+      "nombre": "karen",
+      "apellido": "Torres",
+      "clan": "Bezos",
+      "edad": 28,
+      "id": "7"
+    },
+    {
+      "nombre": "raul",
+      "apellido": "Torres",
+      "clan": "Bezos",
+      "edad": 28,
+      "id": "8"
+    },
+    {
+      "id": "a4ff",
+      "nombre": "juan",
+      "apellido": "pedro",
+      "clan": "bezos",
+      "edad": 25
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "userId": "1"
+    },
+    {
+      "id": "3",
+      "text": "another commentwww about post 1",
+      "userId": "2"
+    },
+    {
+      "id": "4",
+      "text": "another commentsdadsadasd about post 1",
+      "userId": "3"
+    }
+  ]
 }

@@ -1,5 +1,5 @@
-import { getUsuarioById, getUsuarios } from "./Services/services.js";
-
+import { getUsuarioById, getUsuarios, agregarUsuario, updateUSer, deleteUser } from "./Services/services.js";
+import { getPostsByUserId } from "./Services/postService.js";
 
 /*INICIO DE COMANDO PARA IMPRIMIR POR CONSOLA */
 
@@ -955,24 +955,26 @@ populateTableBody(personas); */
 const dtoUsuario = {
     nombre: "juan",
     apellido: "pedro",
-    clan: "23",
-    edad: 25
+    clan: "bezos",
+    edad: 25,
 }
 
 const dtoUsuarioLectura = {
-    id: 1,
-    nombre: "",
-    apellido: "",
-    clan: "",
-    edad: 25
-}
+  nombre: "",
+  apellido: "",
+  clan: "",
+  edad: 2,
+  id: 1
+};
 
 
 const usuarios = await getUsuarios();
 
 const usuario = await getUsuarioById(2);
 console.log(usuarios)
-console.log(usuario)
+
+const getPostsByUser = await getPostsByUserId(1);
+console.log(getPostsByUser);
 
 
 const btnAgregar = document.getElementById("agregar");
@@ -985,24 +987,39 @@ btnAgregar.addEventListener("click", async ()=>{
 
 
 async function renderUsers() {
-    const usuarios = await getUsuarios();
-    const populateTableBody = (data) => {
-        const tbody = document.getElementById("tbody");
-        tbody.innerHTML = "";
+  const usuarios = await getUsuarios();
+  const populateTableBody = (data) => {
+    const tbody = document.getElementById("tbody");
+    tbody.innerHTML = "";
 
-        data.forEach(item =>{
-            const row = document.createElement("tr");
+    data.forEach((item) => {
+      const row = document.createElement("tr");
 
-            Object.values(item).forEach(value =>{
-                const cell = document.createElement("td");
-                cell.textContent = value;
-                row.appendChild(cell);
-            });
-            tbody.appendChild(row)
-        });
-    }
-    
-    populateTableBody(usuarios);
+      Object.values(item).forEach((value) => {
+        const cell = document.createElement("td");
+        cell.textContent = value;
+        row.appendChild(cell);
+      });
+      const cellbuttonActions = document.createElement("td");
+     
+
+      const buttonEdit = document.createElement("Button");
+      buttonEdit.textContent = "Edit";
+      buttonEdit.classList.add("btn","btn-warning")
+
+      const buttonDelete = document.createElement("button");
+      buttonDelete.textContent = "Delete";
+      buttonDelete.classList.add("btn", "btn-danger");
+
+      cellbuttonActions.appendChild(buttonEdit);
+      cellbuttonActions.appendChild(buttonDelete);
+
+        row.appendChild(cellbuttonActions);
+      tbody.appendChild(row);
+    });
+  };
+
+  populateTableBody(usuarios);
 }
 
 renderUsers();

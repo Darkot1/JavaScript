@@ -13,6 +13,12 @@ export async function getUsuarioById(id) {
     return data;
 }
 
-export async function getUsuarioById(user) {
-  let response = await fetch(`${URLbase}/usuarios/${id}`)
+export async function agregarUsuario(user) {
+  let response = await fetch(`${URLbase}/usuarios`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(user) 
+    });
 }

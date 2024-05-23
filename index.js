@@ -960,11 +960,12 @@ const dtoUsuario = {
 }
 
 const dtoUsuarioLectura = {
+    id: 1,
   nombre: "",
   apellido: "",
   clan: "",
   edad: 2,
-  id: 1
+  
 };
 
 
@@ -984,7 +985,13 @@ btnAgregar.addEventListener("click", async ()=>{
 });
 
 
+function updateUserDOM(params){
+    console.log("Hola, aprete el boton editar")
+}
 
+function deleteUserDOM(params) {
+  console.log("Hola, aprete el boton borrar");
+}
 
 async function renderUsers() {
   const usuarios = await getUsuarios();
@@ -1006,10 +1013,16 @@ async function renderUsers() {
       const buttonEdit = document.createElement("Button");
       buttonEdit.textContent = "Edit";
       buttonEdit.classList.add("btn","btn-warning")
+      buttonEdit.addEventListener("click",()=>{
+        console.log("Editar")
+      })
 
       const buttonDelete = document.createElement("button");
       buttonDelete.textContent = "Delete";
       buttonDelete.classList.add("btn", "btn-danger");
+      buttonDelete.addEventListener("click",()=>{
+        deleteUserDOM()
+      })
 
       cellbuttonActions.appendChild(buttonEdit);
       cellbuttonActions.appendChild(buttonDelete);
